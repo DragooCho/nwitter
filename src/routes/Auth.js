@@ -4,7 +4,7 @@ const Auth = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const onChange = (event) => {
-        const {target: {name, value}} = event;
+        const {target: {name, value}} = event; //=== const {name, value} = event.target
         if(name === "email") {
             setEmail(value);
         } else if(name === "password") {
