@@ -3,7 +3,6 @@ import { dbService } from "fbase";
 import React, { useEffect, useState } from "react";
 
 const Home = ({ userObj }) => {
-  console.log(userObj);
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
   useEffect(() => {
@@ -55,8 +54,3 @@ const Home = ({ userObj }) => {
   );
 };
 export default Home;
-
-// onSnapshot은 기본적으로 데이터베이스에 일이 생길때 알림을 받음
-
-//map을 하고 nweet컴포넌트를 만든다.
-// nweet컴포넌트는
