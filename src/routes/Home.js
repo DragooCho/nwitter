@@ -1,3 +1,4 @@
+import Nweet from "components/Nweet";
 import { dbService } from "fbase";
 import React, { useEffect, useState } from "react";
 
@@ -43,12 +44,19 @@ const Home = ({ userObj }) => {
       </form>
       <div>
         {nweets.map((nweet) => (
-          <div key={nweet.id}>
-            <h4>{nweet.text}</h4>
-          </div>
+          <Nweet
+            key={nweet.id}
+            nweetObj={nweet}
+            isOwner={nweet.creatorId === userObj.uid}
+          />
         ))}
       </div>
     </div>
   );
 };
 export default Home;
+
+// onSnapshot은 기본적으로 데이터베이스에 일이 생길때 알림을 받음
+
+//map을 하고 nweet컴포넌트를 만든다.
+// nweet컴포넌트는
