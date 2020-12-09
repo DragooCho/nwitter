@@ -1,5 +1,5 @@
 git add .
-git commit -m "5 0 Get My Own Nweets"
+git commit -m "#5.2 Update Profile Bugfix"
 git push origin master
 
 
