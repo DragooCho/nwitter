@@ -26,6 +26,6 @@ git pull origin master
 
 git pull origin maseter --rebase
 이렇게 하면 원격저장소에 있는 변경사항을 먼저 쌓고 그 위에 내가 작업한 변경사항을 쌓는 방식이다.
-.....
+...
 
 
