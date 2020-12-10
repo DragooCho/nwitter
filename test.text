@@ -1,5 +1,5 @@
 git add .
-git commit -m "#5.2 Update Profile Bugfix"
+git commit -m "#6.0 Cleaning JS"
 git push origin master
 
 
