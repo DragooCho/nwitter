@@ -1,5 +1,7 @@
-import { authService } from "fbase";
 import React, { useState } from "react";
+import { authService } from "fbase";
+
+const inputStyles = {};
 
 const AuthForm = () => {
   const [email, setEmail] = useState("");
@@ -9,7 +11,7 @@ const AuthForm = () => {
   const onChange = (event) => {
     const {
       target: { name, value },
-    } = event; //=== const {name, value} = event.target
+    } = event;
     if (name === "email") {
       setEmail(value);
     } else if (name === "password") {
@@ -33,10 +35,10 @@ const AuthForm = () => {
       setError(error.message);
     }
   };
-  const toggleAccont = () => setNewAccount((prev) => !prev);
+  const toggleAccount = () => setNewAccount((prev) => !prev);
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="container">
         <input
           name="email"
           type="email"
@@ -44,6 +46,7 @@ const AuthForm = () => {
           required
           value={email}
           onChange={onChange}
+          className="authInput"
         />
         <input
           name="password"
@@ -51,12 +54,17 @@ const AuthForm = () => {
           placeholder="Password"
           required
           value={password}
+          className="authInput"
           onChange={onChange}
         />
-        <input type="submit" value={newAccount ? "Create Account" : "Log In"} />
-        {error}
+        <input
+          type="submit"
+          className="authInput authSubmit"
+          value={newAccount ? "Create Account" : "Sign In"}
+        />
+        {error && <span className="authError">{error}</span>}
       </form>
-      <span onClick={toggleAccont}>
+      <span onClick={toggleAccount} className="authSwitch">
         {newAccount ? "Sign In" : "Create Account"}
       </span>
     </>
